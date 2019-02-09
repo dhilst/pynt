@@ -35,13 +35,17 @@ if __name__ == '__main__':
 
     def usage():
         print "{} <template> [arg] [arg] [arg]".format(sys.argv[0])
+        print "{} - [arg] [arg] [arg]".format(sys.argv[0])
         sys.exit(1)
 
     args = type('', (), {})
 
     try:
         args.tokens = sys.argv[2:]
-        args.template = sys.argv[1]
+        if sys.argv[1] == '-':
+            args.template = sys.stdin.read().rstrip()
+        else:
+            args.template = sys.argv[1]
     except IndexError:
         usage()
 

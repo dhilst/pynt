@@ -7,6 +7,10 @@ Examples:
 - `pynt 'Hello {name}' name=Daniel'` -> `Hello Daniel`
 - `pynt '{greeting} {0}' Daniel greeting=hello` -> `Hello Daniel`
 - `pynt 'Hello {name}'` -> `Hello {name}`
+- `pynt '{greeting} {name}' greeting=Hello` -> `Hello {name}`
+
+By passing `-` as first argument the template is read from the stdin:
+- `pynt '{greeting} {name}' greeting=Hello | pynt - name=Daniel` -> `Hello Daniel`
 
 Why?
 
