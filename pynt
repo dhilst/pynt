@@ -34,8 +34,8 @@ if __name__ == '__main__':
     log.addHandler(logging.StreamHandler())
 
     def usage():
-        print "{} <template> [arg] [arg] [arg]".format(sys.argv[0])
-        print "{} - [arg] [arg] [arg]".format(sys.argv[0])
+        print("{} <template> [arg] [arg] [arg]".format(sys.argv[0]))
+        print("{} - [arg] [arg] [arg]".format(sys.argv[0]))
         sys.exit(1)
 
     args = type('', (), {})
@@ -56,5 +56,5 @@ if __name__ == '__main__':
     log.debug('args: %s', args.args)
     log.debug('kwargs: %s', args.kwargs)
 
-    print SafeFormatter().vformat(args.template, args.args, args.kwargs)
+    print(SafeFormatter().vformat(args.template, args.args, args.kwargs))
 
